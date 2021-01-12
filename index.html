@@ -170,7 +170,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-01-12 16:08:42 / Modified: 20:53:55" itemprop="dateCreated datePublished" datetime="2021-01-12T16:08:42+08:00">2021-01-12</time>
+              <time title="Created: 2021-01-12 16:08:42 / Modified: 20:58:52" itemprop="dateCreated datePublished" datetime="2021-01-12T16:08:42+08:00">2021-01-12</time>
             </span>
 
           
@@ -193,12 +193,7 @@
 <li>len(left_part) == len(right_part)</li>
 <li>max(left_part) &lt;= min(right_part)</li>
 </ol>
-<p>index_j = total_length/2 - index_i<br>max(left_part) = max(max(left_A), max(left_B))<br>min(right_part) = min(min(right_A), min(right_B))<br>max(left_A) = A[index_i]<br>min(right_A) = A[index_i+1]<br>same as B</p>
-<p>Binary search explanation</p>
-<p>So if max(left_part)  &gt; min(right_part)<br>How to decide if we should increase index_i?</p>
-<p>if max(left_part) &gt;  min(right_part) : to decrease max(left_part)<br>       if  max(left_A)&gt;max(left_B): increase i  else decrease i</p>
-<p>then max(left_part) &gt;  min(right_part) equals to max(left_A)&gt;min(right_B)  || max(left_B)&gt;min(right_A)</p>
-<p>max(left_A)&gt;min(right_B)  also means max(left_A)&gt;max(left_B) : Decrease i<br>max(left_B)&gt;min(right_A) alse means max(left_B)&gt;max(left_A): Increase i</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">index_j &#x3D; total_length&#x2F;2 - index_i</span><br><span class="line">max(left_part) &#x3D; max(max(left_A), max(left_B))</span><br><span class="line">min(right_part) &#x3D; min(min(right_A), min(right_B))</span><br><span class="line">max(left_A) &#x3D; A[index_i]</span><br><span class="line">min(right_A) &#x3D; A[index_i+1]</span><br><span class="line">same as B</span><br><span class="line"></span><br><span class="line">Binary search explanation</span><br><span class="line"></span><br><span class="line">So if max(left_part)  &gt; min(right_part)</span><br><span class="line">How to decide if we should increase index_i?</span><br><span class="line"></span><br><span class="line">if max(left_part) &gt;  min(right_part) : to decrease max(left_part)</span><br><span class="line">       if  max(left_A)&gt;max(left_B): increase i  else decrease i</span><br><span class="line"></span><br><span class="line">then max(left_part) &gt;  min(right_part) equals to max(left_A)&gt;min(right_B)  || max(left_B)&gt;min(right_A)</span><br><span class="line"></span><br><span class="line">max(left_A)&gt;min(right_B)  also means max(left_A)&gt;max(left_B) : Decrease i</span><br><span class="line">max(left_B)&gt;min(right_A) alse means max(left_B)&gt;max(left_A): Increase i</span><br></pre></td></tr></table></figure>
 <h3 id="二分查找的思考"><a href="#二分查找的思考" class="headerlink" title="二分查找的思考"></a>二分查找的思考</h3><ol>
 <li>推荐使用下界的查找方式: 即找满足(func(x)==true) 的最小x的位置</li>
 <li>使用左闭右开区间定义[left,right)</li>
